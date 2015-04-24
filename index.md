@@ -7,8 +7,8 @@
 
 ### Project themes
 
-* **RF pulse design**
-* **Electromagnetic simulations**
+* [**RF pulse design**](rfpulsedes.html)
+* [**Electromagnetic simulations**](emsims.html)
 * **Extended Phase Graphs**
 
 ### Team
