@@ -3,7 +3,7 @@
 
 ### Water selective pulses
 
-![alt-text](images/wats.jpg)
+<img src="images/wats.jpg" width="70%">
 
 Tailored spectral spatial pulses for counteracting B0 shim errors with parallel transmit. Details in this [publication](http://dx.doi.org/10.1002/mrm.22260)
 
@@ -13,7 +13,7 @@ Code can be found in the [repo](https://github.com/mriphysics/water_selective_pu
 
 Simple [script](https://github.com/mriphysics/AM_multiband) to compute optimized slice phase offsets for minimum peak amplitude AM only multi-band RF pulses. As presented at ISMRM 2015
 
-![alt-text](images/MB_screenshot.png)
+<img src="images/MB_screenshot.png" width="50%">
 
 ### 3D selective RF pulses
 
