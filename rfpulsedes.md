@@ -13,7 +13,7 @@ Code can be found in the [repo](https://github.com/mriphysics/water_selective_pu
 
 Simple [script](https://github.com/mriphysics/AM_multiband) to compute optimized slice phase offsets for minimum peak amplitude AM only multi-band RF pulses. As presented at ISMRM 2015
 
-<img src="images/MB_screenshot.png" width="50%">
+<img src="images/MB_screenshot.png" wisth="30%">
 
 ### 3D selective RF pulses
 
