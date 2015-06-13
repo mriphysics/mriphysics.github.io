@@ -1,7 +1,15 @@
 # RF Pulse Design
 
+## Contents
+* [Water Selective Pulses](#watpulse)
+* [AM only multiband pulses](#ampulse)
+* [3D selective pulses](#3dsel)
+* [Gradient distortion corrected VERSE](#reverse)
 
-### Water selective pulses
+
+<a name="watpulse"></a>
+
+## Water selective pulses
 
 <img src="images/wats.jpg" width="70%">
 
@@ -9,20 +17,27 @@ Tailored spectral spatial pulses for counteracting B0 shim errors with parallel 
 
 Code can be found in the [repo](https://github.com/mriphysics/water_selective_pulses). The release contains example test data (B0/B1 field maps from 3T PTx system).
 
-### Amplitude Modulated Multi-band pulses
+<a name="ampulse"></a>
+
+
+## Amplitude Modulated Multi-band pulses
 
 Simple [script](https://github.com/mriphysics/AM_multiband) to compute optimized slice phase offsets for minimum peak amplitude AM only multi-band RF pulses. As presented at ISMRM 2015
 
 <img src="images/MB_screenshot.png" width="30%">
 
-### 3D selective RF pulses
+<a name="3dsel"></a>
 
-![alt-text](images/kspiral_remove.gif)
+## 3D selective RF pulses
+
+<img src="images/kspiral_remove.gif" width="50%">
 
 Coming soon ...
 
-### Gradient Impulse Response corrected VERSE
+<a name="reverse"></a>
 
-![alt-text](images/girf.png)
+## Gradient Impulse Response corrected VERSE
+
+<img src="images/girf.png" width="50%">
 
 Coming soon ... (really)...
