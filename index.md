@@ -21,6 +21,7 @@
 
 ####[UMC Utrecht:](http://www.umcutrecht.nl/en/Research/Research-programs/UMC-Utrecht-Center-for-Image-Sciences/Research-programs/Ultra-high-field-MRI-7-Tesla/High-Precision-Medical-Imaging/)
 
-* [**Alessandro Sbrizzi**](http://www.umcutrecht.nl/en/Research/Research-programs/UMC-Utrecht-Center-for-Image-Sciences/Research-programs/Ultra-high-field-MRI-7-Tesla/High-Precision-Medical-Imaging/#Quantitative_and_advanced_MR_techniques_(PI:_Hans_Hoogduin))
+* <a href="http://www.umcutrecht.nl/en/Research/Research-programs/UMC-Utrecht-Center-for-Image-Sciences/Research-programs/Ultra-high-field-MRI-7-Tesla/High-Precision-Medical-Imaging#Quantitative_and_advanced_MR_techniques_(PI:_Hans_Hoogduin)">**Alessandro Sbrizzi**</a>
+
 
 This is a work in progress, so updates will come regularly. Please contact us (details available on user pages linked above) if you have any requests
