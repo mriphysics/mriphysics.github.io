@@ -3,13 +3,13 @@
 ## Contents
 * [Water Selective Pulses](#watpulse)
 * [AM only multiband pulses](#ampulse)
-* [3D selective pulses](#3dsel)
+* [Phase relaxed localized excitation pulses for CPMG](#cpmg)
 * [Gradient distortion corrected VERSE](#reverse)
 
 
 <a name="watpulse"></a>
 
-## Water selective pulses
+## [Water selective pulses](https://github.com/mriphysics/water_selective_pulses/#readme)
 
 <img src="images/wats.jpg" width="70%">
 
@@ -20,24 +20,24 @@ Code can be found in the [repo](https://github.com/mriphysics/water_selective_pu
 <a name="ampulse"></a>
 
 
-## Amplitude Modulated Multi-band pulses
+## [Amplitude Modulated Multi-band pulses](https://github.com/mriphysics/AM_multiband/#readme)
 
-Simple [script](https://github.com/mriphysics/AM_multiband) to compute optimized slice phase offsets for minimum peak amplitude AM only multi-band RF pulses. As presented at ISMRM 2015
+Simple [script](https://github.com/mriphysics/AM_multiband) to compute optimized slice phase offsets for minimum peak amplitude AM only multi-band RF pulses. As presented at [ISMRM 2015](https://kclpure.kcl.ac.uk/portal/files/35847819/mb_AM_submitted.pdf)
 
 <img src="images/MB_screenshot.png" width="30%">
 
-<a name="3dsel"></a>
+<a name="cpmg"></a>
 
-## 3D selective RF pulses
+## [Phase Relaxed Localized Excitation pulses for CPMG sequences](https://github.com/mriphysics/phase_relaxed_CPMG_excitation/#readme)
 
-<img src="images/kspiral_remove.gif" width="50%">
+<img src="images/square_excitation.jpg" width="60%">
 
-Coming soon ...
+Pulse design method for use with localized excitation in CPMG fast spin echo sequences. Selective violation of the CPMG condition is used as a means for improving background suppression. See [this abstract](https://kclpure.kcl.ac.uk/portal/files/38148970/0948.pdf) for more details. Code is [here](https://github.com/mriphysics/phase_relaxed_CPMG_excitation/).
 
 <a name="reverse"></a>
 
-## Gradient Impulse Response corrected VERSE
+## [Gradient Impulse Response corrected VERSE](https://github.com/mriphysics/reverse-GIRF/#readme)
 
 <img src="images/girf.png" width="50%">
 
-Coming soon ... (really)...
+VERSE based pulse design with additional inclusion of gradient impulse response function. See the [readme](https://github.com/mriphysics/reverse-GIRF/#readme) for detailed information.
