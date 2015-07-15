@@ -8,7 +8,7 @@
 ### Project themes
 
 * [**RF pulse design**](rfpulsedes.html)
-* [**Direct Signal Control**](seqdes.html)
+* [**Direct Signal Control**](dsc.html)
 * [**Electromagnetic simulations**](emsims.html)
 
 ### People
