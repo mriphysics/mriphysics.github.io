@@ -10,6 +10,7 @@
 * [**RF pulse design**](rfpulsedes.html)
 * [**Direct Signal Control**](dsc.html)
 * [**Electromagnetic simulations**](emsims.html)
+* [**RF Field Mapping**](fieldmapping.html)
 
 ### People
 
@@ -17,6 +18,7 @@
 
 * [**Shaihan Malik**](https://kclpure.kcl.ac.uk/portal/shaihan.malik.html)
 * [**Arian Beqiri**](https://kclpure.kcl.ac.uk/portal/en/persons/arian-beqiri%28b55341e1-1398-4feb-bf64-b37876b82c88%29.html)
+* [**Francesco Padormo**](https://kclpure.kcl.ac.uk/portal/francesco.padormo.html)
 * [**Jo Hajnal**](https://kclpure.kcl.ac.uk/portal/jo.hajnal.html)
 
 ####[UMC Utrecht:](http://www.umcutrecht.nl/en/Research/Research-programs/UMC-Utrecht-Center-for-Image-Sciences/Research-programs/Ultra-high-field-MRI-7-Tesla/High-Precision-Medical-Imaging/)
