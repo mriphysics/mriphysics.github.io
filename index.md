@@ -11,6 +11,7 @@
 * [**Direct Signal Control**](dsc.html)
 * [**Electromagnetic simulations**](emsims.html)
 * [**RF Field Mapping**](fieldmapping.html)
+* [**Teaching Materials**](teaching.html)
 
 ### People
 
