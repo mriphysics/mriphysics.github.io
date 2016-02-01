@@ -5,3 +5,4 @@
 ./md2strapdownhtml.sh emsims.md 'electromagnetic simulations'
 ./md2strapdownhtml.sh fieldmapping.md 'fieldmapping'
 ./md2strapdownhtml.sh teaching.md 'teaching'
+./md2strapdownhtml.sh teaching-mri-intro.md 'Masters: medical imaging sciences'

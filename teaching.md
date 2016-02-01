@@ -5,7 +5,7 @@ This page contains links to supplementary teaching material for various courses.
 
 ### MRI related grad teaching
 
-* [Introductory MRI Physics](https://www.evernote.com/l/AFNXfLnJOU9EzJqbgd0lj6ZeMtYjB9E2sy8)
+* [Introductory MRI Physics](teaching-mri-intro.html)
 * [RF pulse design and simulation](https://www.evernote.com/shard/s83/sh/fabb1dbf-9100-42d3-b9ba-b3f2f6c09529/8d0d83f5bd71300b)
 * [Simulation of sequences](https://www.evernote.com/shard/s83/sh/f97d2657-16c1-4e02-981a-9e9f42b133a2/6c9b3609e0e5fd90)
 
