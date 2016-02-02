@@ -1,15 +1,15 @@
 # Introductory MRI Physics: supplementary animations
 
-## Tipping of Magnetization by RF field
+### Tipping of Magnetization by RF field
 
 An applied B1 field will tip M into the transverse plane.
 This appears as a spiraling rotation in the laboratory frame of reference:
 
-<img src="images/excite_labframe.gif" width="50%">
+<img src="images/excite_labframe.gif" width="30%">
 
 It is useful to view the same process in a frame of reference rotating at the Larmor frequency:
 
-<img src="images/excite_rotframe.gif" width="50%">
+<img src="images/excite_rotframe.gif" width="30%">
 
 ### Relaxation Effects
 
