@@ -6,3 +6,4 @@
 ./md2strapdownhtml.sh fieldmapping.md 'fieldmapping'
 ./md2strapdownhtml.sh teaching.md 'teaching'
 ./md2strapdownhtml.sh teaching-mri-intro.md 'Masters: medical imaging sciences'
+./md2strapdownhtml.sh teaching-rf-pulses.md 'Masters: advanced physics of MRI'
