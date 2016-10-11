@@ -15,14 +15,14 @@
 
 ## NMR basics
 
-If we imagine applying a constant magnetic field in the x-direction, the magnetization
-vector would precess around the effective field direction:
+In the following plots, the pink arrow corresponds to induced nuclear magnetization \\(\mathbf{M}\\) and the blue arrow is the effective rotation axis given by the magnetic field vector \\(\mathbf{B}\\).  If we imagine applying a constant magnetic field in the x-direction, the magnetization vector would precess around the effective field direction:
 
 <img src="images/Bloch_Bconst_lab.gif" width="50%">
 
 But this wouldn't give us what we want. Instead we use a magnetic field that is
 oscillating at the Larmor frequency, usually refered to as \\(B_1\\). If we use
 an x polarised field, i.e. \\( \mathbf{B} = [B_1 \cos \omega t \quad 0 \quad B_0] \\) then we get the following:
+
 <img src="images/Bloch_Bx_lab.gif" width="50%">
 
 Now \\(\mathbf{M}\\) does tip down. The reason is that the direction of the B1 field reverses as the magnetization vector also changes direction, hence it keeps tipping it down. This is easier seen in a rotating reference frame:
@@ -41,6 +41,7 @@ The effective magnetic field direction in the rotating frame is now fixed:
 
 <img src="images/Bloch_Bminus_rot.gif" width="50%">
 
+If you scroll back up, notice that the linearly polarised field had twice the amplitude of the circularly polarized field, but achieved the same flip angle - \\(90^\circ\\). This is because linear polarization is less efficient than circular polarization, as it doesn't always tip down. This is important for MRI - circular polarization is used because it is more efficient
 
 ### Relaxation Effects
 
