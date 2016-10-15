@@ -32,7 +32,7 @@ Simple [script](https://github.com/mriphysics/AM_multiband) to compute optimized
 
 <img src="images/square_excitation.jpg" width="60%">
 
-Pulse design method for use with localized excitation in CPMG fast spin echo sequences. Selective violation of the CPMG condition is used as a means for improving background suppression. See [this abstract](https://kclpure.kcl.ac.uk/portal/files/38148970/0948.pdf) for more details. Code is [here](https://github.com/mriphysics/phase_relaxed_CPMG_excitation/).
+Pulse design method for use with localized excitation in CPMG fast spin echo sequences. Selective violation of the CPMG condition is used as a means for improving background suppression. See [this publication](http://onlinelibrary.wiley.com/doi/10.1002/mrm.25996/abstract) for more details. Code is [here](https://github.com/mriphysics/phase_relaxed_CPMG_excitation/).
 
 <a name="reverse"></a>
 
