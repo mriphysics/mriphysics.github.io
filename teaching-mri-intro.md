@@ -36,6 +36,12 @@ The effective magnetic field direction in the rotating frame is now fixed:
 
 If you scroll back up, notice that the linearly polarised field had twice the amplitude of the circularly polarized field, but achieved the same flip angle - \\(90^\circ\\). This is because linear polarization is less efficient than circular polarization, as it doesn't always tip down. This is important for MRI - circular polarization is used because it is more efficient
 
+One final word on this: *what happens if we use a circularly polarised field that is rotating in the wrong direction*? i.e. what if we have \\( \mathbf{B} = [B_1 \cos \omega t \quad B_1 \sin \omega t \quad B_0] \\)? Now the field rotates in the opposite direction to the precessing magnetization so it is hardly ever optimally oriented to rotate \\(\mathbf{M}\\) into the transverse plane:
+
+<img src="images/Bloch_Bplus_lab.gif" width="50%">
+
+The result is that \\(\mathbf{M}\\) doesn't tip. This component of the \\(B_1\\) field doesn't contribute to the NMR at all.
+
 ### Relaxation Effects
 
 Magnetization returns to thermal equilibrium by multiple means, resulting in longitudinal recovery with time constant T1 and transverse decay with time constant T2.
