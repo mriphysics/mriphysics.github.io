@@ -36,6 +36,20 @@ The total field can be decomposed into a radiative term (dies as 1/r) and near f
 
 Zooming in much closer to the antenna we see that the 'near field' term dominates. The field oscillates in magnitude but doesn't exhibit traveling wave behaviour. Notice that the near field and far field terms have a 90 degree phase difference.
 
+### Half wave dipole antenna
+
+There are some very informative animations on half-wavelength dipole antennas available on wikipedia.
+
+Here is one (linked directly from wikipedia) showing the current pattern when transmitting:
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Dipole_antenna_standing_waves_animation_461x217x150ms.gif" width="70%">
+
+Here is another animation, showing induced currents when the antenna is used as a receiver:
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Dipole_receiving_antenna_animation_6_800x394x150ms.gif" width="70%">
+
+
+Again, this was linked directly from wikipedia. Please see [here](https://en.wikipedia.org/wiki/Dipole_antenna) for further info
 
 
 ## Reflections and method of images
