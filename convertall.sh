@@ -6,6 +6,6 @@
 ./md2strapdownhtml.sh fieldmapping.md 'fieldmapping'
 ./md2strapdownhtml.sh teaching.md 'teaching'
 ./md2strapdownhtml_MJ.sh teaching-mri-intro.md 'MRES: Medical Imaging Sciences'
-./md2strapdownhtml.sh teaching-rf-pulses.md 'Masters: advanced physics of MRI'
+./md2strapdownhtml_MJ.sh teaching-rf-pulses.md 'Masters: advanced physics of MRI'
 ./md2strapdownhtml.sh teaching-sequence-sims.md 'Masters: advanced physics of MRI'
 ./md2strapdownhtml.sh teaching-antennas.md 'BEng: electrical engineering II'

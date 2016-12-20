@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html>
-<title>Masters: advanced physics of MRI</title>
+<head><script type=text/javascript async 
+ src=https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML>
+</script>
+</head><title>Masters: advanced physics of MRI</title>
 <xmp theme=spacelab style=display:none;>
+
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
 # RF pulse design and simulations: supplementary animations
 
-### RF excitation
 
-Excitation in the laboratory frame:
+### RF excitation, NMR basics
 
-<img src="images/excite_labframe.gif" width="30%">
+This follows on from the introductory NMR material on the [introductory page](teaching-mri-intro.html). **In all of the following animations, the blue arrow
+corresponds to the effective magnetic field, while the pink arrow is the magnetization
+vector,** \\(\mathbf{M}\\).
 
-and in the rotating frame:
+To recap, excitation can be viewed either in the lab frame:
 
-<img src="images/excite_rotframe.gif" width="30%">
+<img src="images/Bloch_Bminus_lab.gif" width="50%">
+
+or in a rotating reference frame:
+
+<img src="images/Bloch_Bminus_rot.gif" width="50%">
+
+This frame can be moving at the local resonance frequency, the RF frequency (these could be different), or indeed any other frequency. More on that in the lecture notes.
 
 ### Shaped RF pulses
 
-A sinc pulse with many lobes:
+RF pulses can be shaped, and this usually helps improve their selectivity in frequency
+(or space via an applied gradient). On resonance, slice selective pulses simply
+tip \\(\mathbf{M}\\) back and forth. Here is a long sinc pulse
 
 <img src="images/pulse_and_bloch2.gif" width="50%">
 
 and a heavily truncated one:
 
 <img src="images/pulse_and_bloch1.gif" width="50%">
-
-An **adiabatic pulse**. The yellow line represents the effective rotation axis
-for the magnetisation (this moves because the frequency is swept).
-
-<img src="images/pulse_and_bloch3_and_axis.gif" width="50%">
 
 ### Slice selection
 
@@ -39,7 +52,47 @@ A k-space view of slice selection:
 
 <img src="images/sta_kspace_slice.gif" width="20%">
 
-(c) Shaihan Malik 2016
+
+### Frequency-swept and adiabatic RF pulses
+
+Frequency-swept pulses are frquently used to invert magnetization. Their properties
+differ quite a lot from the simple pulses shown above. Here is the magnetization
+trajectory from a simple pulse whose frequency is swept linearly, and whose magnitude is
+modified to maintain constant effective magnetic field strength in the rotating frame
+of the magnetization:
+
+<img src="images/adiabatic_linear_sweep__lab.gif" width="50%">
+
+The dynamics are confusing to look at, but it is clear that \\(\mathbf{M}\\) does
+end up being inverted by this pulse. The picture would be simpler if we transform
+to the rotating frame moving at the instantaneous frequency of the RF pulse, rather
+than the resonance frequency of the magnetization. We can achieve this in part by
+making the camera move at the right speed:
+
+<img src="images/adiabatic_linear_sweep__rot_cam.gif" width="50%">
+
+Notice how the camera changes direction half way through - this is because of the
+frequency offset changing sign. Now the dynamics looks simpler, but the trails we have drawn are hard to interpret. Finally, we can do a better job by simulating directly
+in the rotating frame of the RF pulse:
+
+<img src="images/adiabatic_linear_sweep__rot.gif" width="50%">
+
+The magnetization precesses around the effective magnetic field, which is swept down as the frequency of the pulse is swept. As long as the sweep is done slowly compared to the speed of rotation of \\(\mathbf{M}\\) about \\(\mathbf{B_{eff}}\\), \\(\mathbf{M}\\) remains locked-in and an inversion is achieved.
+
+This analysis shows how adiabatic pulses work, however constant sweeps like this
+are not commonly used. Instead the most popular type of adiabatic pulse is the
+hyperbolic secant pulse, which can achieve nice slice selectivity as well as being
+adiabatic. Here is an example of the dynamics of \\(\mathbf{M}\\) in the rotating
+frame of the magnetization:
+
+<img src="images/adiabatic_hypsech__lab.gif" width="50%">
+
+and in the frame of the pulse:
+
+<img src="images/adiabatic_hypsech__rot.gif" width="50%">
+
+
+(c) Shaihan Malik 2017
 </xmp>
 <script src=http://strapdownjs.com/v/0.2/strapdown.js></script>
 </html>
