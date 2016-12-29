@@ -73,10 +73,25 @@ in the rotating frame of the RF pulse:
 The magnetization precesses around the effective magnetic field, which is swept down as the frequency of the pulse is swept. As long as the sweep is done slowly compared to the speed of rotation of \\(\mathbf{M}\\) about \\(\mathbf{B_{eff}}\\), \\(\mathbf{M}\\) remains locked-in and an inversion is achieved.
 
 This analysis shows how adiabatic pulses work, however constant sweeps like this
-are not commonly used. Instead the most popular type of adiabatic pulse is the
-hyperbolic secant pulse, which can achieve nice slice selectivity as well as being
-adiabatic. Here is an example of the dynamics of \\(\mathbf{M}\\) in the rotating
-frame of the magnetization:
+are not commonly used. An improved version is the Adiabatic Full Passage (AFP) which
+uses a time-variable frequency sweep that is designed to effectively invert \\(\mathbf{M}\\). Here we
+see it in the magnetization frame of reference:
+
+<img src="images/adiabatic_afp__lab.gif" width="50%">
+
+Switching to the FM reference frame we see that the effective magnetic field is swept
+such that \\(\mathbf{M}\\) follows it closely:
+
+<img src="images/adiabatic_afp__rot.gif" width="50%">
+
+This type of pulse can also be stopped half way, to make a \\(\frac{\pi}{2}\\) rotation,
+called an Adiabatic Half Passage (AHP):
+
+<img src="images/adiabatic_ahp__lab.gif" width="50%">
+
+In practical terms, the most popular type of adiabatic pulse is the
+hyperbolic secant pulse, which can achieve nice slice selectivity (and can be used as
+a refocusing pulse). Here is an example of the dynamics of \\(\mathbf{M}\\) in the rotating frame of the magnetization:
 
 <img src="images/adiabatic_hypsech__lab.gif" width="50%">
 
