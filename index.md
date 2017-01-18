@@ -8,7 +8,7 @@
 ### Project themes
 
 * [**RF pulse design**](rfpulsedes.html)
-* [**Direct Signal Control**](dsc.html)
+* [**Sequence Level PTx optimization**](dsc.html)
 * [**Electromagnetic simulations**](emsims.html)
 * [**RF Field Mapping**](fieldmapping.html)
 * [**Teaching Materials**](teaching.html)

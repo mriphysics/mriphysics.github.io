@@ -1,12 +1,18 @@
-# Direct Signal Control
+# Sequence Level PTx optimization
 
-**This set of methods is based on designing entire sequences of RF pulses together, focusing on the important thing - the *signal* - as the subject of the optimization. The main example so far has been dynamic RF shimming of Fast Spin Echo sequences.**
+**This set of methods is based on designing entire sequences of RF pulses together. A major theme of this work is to focus on using PTx degrees of freedom to optimize more than just the homogeneity of the B1+ field.
+
 ##Contents
 * [**Optimal Control EPG**](#optepg)
-* [**EPG vs Isochromat simulations**]() *(coming soon)*
-* [**Driven Equilibrium EPG**]() *(coming soon)*
+* [**Extended RF shimming for cardiac bSSFP**](#cardiac_shim)
 
 <a name="optepg"></a>
 
 ##[Optimal Control EPG](https://github.com/mriphysics/optimal-control-EPG/#readme)
-This work by [Alessandro Sbrizzi (UMCU)](http://www.umcutrecht.nl/en/Research/Research-programs/UMC-Utrecht-Center-for-Image-Sciences/Research-programs/Ultra-high-field-MRI-7-Tesla/High-Precision-Medical-Imaging) builds on the *direct signal control* concept (see [this](http://dx.doi.org/10.1002/mrm.25192) paper, and [this](http://dx.doi.org/10.1002/mrm.25192) one) but treats the design problem using optimal control methods, rather than simple numerical optimization. The result is highly accelerated and much stabler calculation.
+This is an efficient implementation of the *Direct Signal Control* (DSC) framework, a method for optimizing Turbo Spin Echo sequences, directly aiming to achieve uniform *signal* properties by dynamically switching RF shims throughout the echo train (see [this](http://dx.doi.org/10.1002/mrm.25192) paper, and [this](http://dx.doi.org/10.1002/mrm.25192) one).**
+This work by [Alessandro Sbrizzi (UMCU)](http://www.umcutrecht.nl/en/Research/Research-programs/UMC-Utrecht-Center-for-Image-Sciences/Research-programs/Ultra-high-field-MRI-7-Tesla/High-Precision-Medical-Imaging)  treats the design problem using optimal control methods, rather than simple numerical optimization. The result is highly accelerated and much stabler calculation.
+
+<a name="cardiac_shim"></a>
+
+##[Extended RF shimming for cardiac bSSFP](https://github.com/mriphysics/cardiac_RF_shimming/#readme)
+RF shimming with the aim of directly minimizing the TR of bSSFP sequences. This is achieved by directly minimizing the SAR (requires Q-matrices) in addition to searching for the optimal RF pulse duration to allow maximum efficiency within specified constraints.
