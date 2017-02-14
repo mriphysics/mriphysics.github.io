@@ -22,7 +22,7 @@
 * [**Francesco Padormo**](https://www.researchgate.net/profile/Francesco_Padormo)
 * [**Jo Hajnal**](https://kclpure.kcl.ac.uk/portal/jo.hajnal.html)
 * [**Samy Abo Seada**](https://kclpure.kcl.ac.uk/portal/en/persons/samy-abo-seada(fc0a779c-c581-4267-874c-3c2723158d9c.html)
-* [**Rui Pedro Teixeira**](https://kclpure.kcl.ac.uk/portal/en/persons/rui-pedro-teixeira(0bde6612-0066-42a1-aa81-e75b7740e7fd.html)
+* [**Rui Pedro A.G. Teixeira**](https://kclpure.kcl.ac.uk/portal/en/persons/rui-pedro-teixeira(0bde6612-0066-42a1-aa81-e75b7740e7fd.html)
 
 ####[UMC Utrecht:](http://www.umcutrecht.nl/en/Research/Research-programs/UMC-Utrecht-Center-for-Image-Sciences/Research-programs/Ultra-high-field-MRI-7-Tesla/High-Precision-Medical-Imaging/)
 
