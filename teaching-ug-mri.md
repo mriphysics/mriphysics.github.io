@@ -1,42 +1,14 @@
 
 
-# Introductory MRI Physics: supplementary animations
+# MRI physics, UG level
 
 ## NMR basics
 
-In the following plots, the pink arrow corresponds to induced nuclear magnetization \\(\mathbf{M}\\) and the blue arrow is the effective rotation axis given by the magnetic field vector \\(\mathbf{B}\\).  If we imagine applying a constant magnetic field in the x-direction, the magnetization vector would precess around the effective field direction:
-
-<img src="images/Bloch_Bconst_lab.gif" width="50%">
-
-But this wouldn't give us what we want. Instead we use a magnetic field that is
-oscillating at the Larmor frequency, usually refered to as \\(B_1\\). If we use
-an x polarised field, i.e. \\( \mathbf{B} = [B_1 \cos \omega t \quad 0 \quad B_0] \\) then we get the following:
-
-<img src="images/Bloch_Bx_lab.gif" width="50%">
-
-Now \\(\mathbf{M}\\) does tip down. The reason is that the direction of the B1 field reverses as the magnetization vector also changes direction, hence it keeps tipping it down. This is easier seen in a rotating reference frame:
-
-<img src="images/Bloch_Bx_rot_cam.gif" width="50%">
-
-The vector's motion is jerky because the rotation axis (defined by \\(B_x\\)) is not always tipping \\(\mathbf{M}\\) down. This is easier to see in a rotating reference frame where the Larmor precession is removed:
-
-<img src="images/Bloch_Bx_rot.gif" width="50%">
-
-A better solution is to use a **circularly polarized** B1 field - \\( \mathbf{B} = [B_1 \cos \omega t \quad -B_1 \sin \omega t \quad B_0] \\). This has the property of constantly changing direction; at the resonant frequency the field constantly changes to match the precession direction of \\(\mathbf{M}\\) hence always tips it down:
+On this page, the pink (or sometimes purple) arrow corresponds to induced nuclear magnetization \\(\mathbf{M}\\). If a **circularly polarized** B1 field - \\( \mathbf{B} = [B_1 \cos \omega t \quad -B_1 \sin \omega t \quad B_0] \\) is applied, then \\(\mathbf{M}\\) can be made to rotate down away from equilibrium (aligned with z). 
 
 <img src="images/Bloch_Bminus_lab.gif" width="50%">
 
-The effective magnetic field direction in the rotating frame is now fixed:
-
-<img src="images/Bloch_Bminus_rot.gif" width="50%">
-
-If you scroll back up, notice that the linearly polarised field had twice the amplitude of the circularly polarized field, but achieved the same flip angle - \\(90^\circ\\). This is because linear polarization is less efficient than circular polarization, as it doesn't always tip down. This is important for MRI - circular polarization is used because it is more efficient
-
-One final word on this: *what happens if we use a circularly polarised field that is rotating in the wrong direction*? i.e. what if we have \\( \mathbf{B} = [B_1 \cos \omega t \quad B_1 \sin \omega t \quad B_0] \\)? Now the field rotates in the opposite direction to the precessing magnetization so it is hardly ever optimally oriented to rotate \\(\mathbf{M}\\) into the transverse plane:
-
-<img src="images/Bloch_Bplus_lab.gif" width="50%">
-
-The result is that \\(\mathbf{M}\\) doesn't tip. This component of the \\(B_1\\) field doesn't contribute to the NMR at all.
+If you'd like to see more, look at the [grad level MRI intro page](teaching-mri-intro.html).
 
 ### Relaxation Effects
 
@@ -104,5 +76,47 @@ If a gradient is applied in the y-direction, the same is true:
 This will be different for each applied gradient, and each gradient maps out a trajectory in k-space. We can plot the signals as a function of k, and then use an inverse FT to reconstruct the image.
 
 
+<br>
+<br>
 
-(c) Shaihan Malik 2016
+## Steady state behaviour
+
+If a sequence uses rapidly repeated RF pulses then magnetization does not have time to recover from one excitation to the rest. The result is that a dynamic equilibrium is reached, in which the longitudinal magnetization is less than the maximum available. For example, see the sequence below:
+
+
+<img src="images/GRE_flip90_TR1000.gif" width="65%">
+
+This is called saturation. If the repetition time is reduced, the effect is worse, and the steady-state magnetization is even smaller - the result from imaging would be lower signal. 
+
+<img src="images/GRE_flip90_TR500.gif" width="65%">
+
+We find that in this case reducing the flip angle (below: from 90 to 60 degrees) can lead to an increase in signal, since the saturation effect is reduced
+
+<img src="images/GRE_flip59_TR500.gif" width="65%">
+
+
+<br>
+<br>
+
+## Quantitative MRI
+
+In lectures we looked at an example of trying to measure the T1 and T2 of some different samples in test-tubes. Below are the images obtained using inversion recovery for different delay times (Ti):
+
+<img src="images/inversiontimes.gif" width="65%">
+
+Below are the same tubes, this time scanned with spin echo sequences using different echo times:
+
+<img src="images/echotimes.gif" width="65%">
+
+In both cases we calculate T1 and T2 for each pixel, using the relevant signal equation.
+
+Below, T1:
+
+<img src="images/fig_2017_11_10_11_28_40.png" width="65%">
+
+
+Below, T2:
+
+<img src="images/fig_2017_11_10_11_47_12.png" width="65%">
+
+(c) Shaihan Malik 2017
