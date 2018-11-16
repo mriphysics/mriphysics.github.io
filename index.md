@@ -7,6 +7,7 @@
 
 ### Project themes
 
+* [**EPG-X simulations**](https://github.com/mriphysics/EPG-X#readme)
 * [**RF pulse design**](rfpulsedes.html)
 * [**Sequence Level PTx optimization**](dsc.html)
 * [**Electromagnetic simulations**](emsims.html)
