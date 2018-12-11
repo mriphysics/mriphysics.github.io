@@ -18,7 +18,7 @@ Software and methodologies for magnetic resonance imaging of the fetal heart.
 
 2D fetal cardiac cine imaging using highly-accelerated dynamic MRI and retrospective motion correction.
 
-<img src="images/fetalcmr_mrm26686_sup_video_1c.gif">  
+<img src="images/fetalcmr_mrm26686_sup_video_1c.gif">
 
 ### Code Repository
 
@@ -40,7 +40,7 @@ Software and methodologies for magnetic resonance imaging of the fetal heart.
 
 4D depiction of the fetal heart and great vessels using a highly-accelerated multi-planar real-time 2D balanced steady state free precession acquisition combined with retrospective image-domain techniques for motion correction, cardiac synchronisation and outlier rejection. 
 
-<iframe src="https://widgets.figshare.com/articles/7413566/embed?show_title=0" width="568" height="426" frameborder="0" autostart=""></iframe>
+<img src="images/fetalcmr_mrm1819633_sup_video_2.gif">
 
 ### Code Repository
 
@@ -50,7 +50,11 @@ Software and methodologies for magnetic resonance imaging of the fetal heart.
 
 **Fetal whole-heart 4D imaging using motion-corrected multi-planar real-time MRI.**  
 *JFP van Amerom, DFA Lloyd, M Deprez, AN Price, SJ Malik, K Pushparajah, MPM van Poppel, MA Rutherford, R Razavi, JV Hajnal.*   
-2018. arXivID: [1812.02249](https://arxiv.org/abs/1812.02249)
+2018. preprint. arXivID: [1812.02249](https://arxiv.org/abs/1812.02249)
+
+**Fetal whole-heart 4D imaging using motion-corrected multi-planar real-time MRI (video)**  
+2018. figshare. doi: [10.6084/m9.figshare.7413566](https://doi.org/10.6084/m9.figshare.7413566)
+
 
 ---
 
