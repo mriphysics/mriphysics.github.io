@@ -44,7 +44,7 @@ Transverse and longitudinal relaxation are caused by the fluctuating local field
 
 <img src="images/T2_slow_fluctuation.gif" width="40%">
 
-As before the arrows correspond to the precessing phases of the spins. The grey colours correspond to the local strength of the magnetic field (longitudinal component). If this fluctuates it causes the precession frequency of the spins to locally speed up and slow down. The result (exaggerated here for bigger effect) is that the spins rapidly lose phase coherence. This corresponds to a **short T2 time**.
+The arrows correspond to the precessing phases of the spin moments - imagine we are looking down on them from above so we can see the transverse component. The grey colours correspond to the local strength of the magnetic field (longitudinal component). If this fluctuates it causes the precession frequency of the spins to locally speed up and slow down. The result (exaggerated here for bigger effect) is that the spins rapidly lose phase coherence, hence the overall signal (which is the aggregate from all of them) will be lower. Thus a long coherence time corresponds to a **short T2 time**.
 
 Now imagine the opposite scenario where we have very rapidly fluctuating fields:
 
