@@ -10,3 +10,4 @@
 ./md2strapdownhtml.sh teaching-sequence-sims.md 'Masters: advanced physics of MRI'
 ./md2strapdownhtml.sh teaching-antennas.md 'BEng: Electromagnetism'
 ./md2strapdownhtml_MJ.sh teaching-ug-mri.md 'BEng: Medical Imaging'
+./md2strapdownhtml.sh fetalcmr.md 'Fetal CMR'
