@@ -4,7 +4,7 @@
 
 ## NMR basics
 
-On this page, the pink (or sometimes purple) arrow corresponds to induced nuclear magnetization \\(\mathbf{M}\\). If a **circularly polarized** B1 field - \\( \mathbf{B} = [B_1 \cos \omega t \quad -B_1 \sin \omega t \quad B_0] \\) is applied, then \\(\mathbf{M}\\) can be made to rotate down away from equilibrium (aligned with z). 
+On this page, the pink (or sometimes purple) arrow corresponds to induced nuclear magnetization \\(\mathbf{M}\\). If a **circularly polarized** B1 field - \\( \mathbf{B} = [B_1 \cos \omega t \quad -B_1 \sin \omega t \quad B_0] \\) is applied, then \\(\mathbf{M}\\) can be made to rotate down away from equilibrium (aligned with z).
 
 <img src="images/Bloch_Bminus_lab.gif" width="50%">
 
@@ -38,6 +38,22 @@ More generally, after excitation by 90 degree pulse, the magnetization will retu
 <img src="images/FID_lab.gif" width="60%">
 
 Note that \\(\mathbf{M}\\) *does not* rotate back to equilibrium - the transverse and longitudinal relaxation components are independent. Note also that the Larmor frequency here is exaggeratedly small. In reality \\(\omega\\) is in the range of 100MHz, making one period of rotation about 10ns, whereas the relaxation times are in the range of 10s to 100s of milliseconds. Hence the precession rotation depicted here would in reality be much faster (this is true for all the diagrams on this page) but has been slowed down to make easier to interpret.
+
+#### Relaxation rates and correlation times
+Transverse and longitudinal relaxation are caused by the fluctuating local fields experienced by each spin moment. Taking a simplistic view, longitudinal relaxation is caused by the transverse component of the local fields, while transverse relaxation relates to the longitudinal component of the local fields. The latter effect is more straightforward to visualise. Imagine that a collection of spins experiences very slowly varying fluctuating background field as shown below:
+
+<img src="images/T2_slow_fluctuation.gif" width="40%">
+
+As before the arrows correspond to the precessing phases of the spins. The grey colours correspond to the local strength of the magnetic field (longitudinal component). If this fluctuates it causes the precession frequency of the spins to locally speed up and slow down. The result (exaggerated here for bigger effect) is that the spins rapidly lose phase coherence. This corresponds to a **short T2 time**.
+
+Now imagine the opposite scenario where we have very rapidly fluctuating fields:
+
+<img src="images/T2_fast_fluctuation.gif" width="40%">
+
+The fields have the same strength, but since the fluctuations are fast they don't accumulate a big difference on the spins phase over time. In this example the fast fluctuation (i.e. short correlation time) gives rise to a **long T2 time**. With reference to above, the T2' (reversible) decay corresponds to background fields that are not time varying. The T2 decay (irreversible) corresponds to all randomly temporally fluctuating fields.
+
+
+
 
 <br>
 <br>
@@ -86,7 +102,7 @@ If a sequence uses rapidly repeated RF pulses then magnetization does not have t
 
 <img src="images/GRE_flip90_TR1000.gif" width="65%">
 
-This is called saturation. If the repetition time is reduced, the effect is worse, and the steady-state magnetization is even smaller - the result from imaging would be lower signal. 
+This is called saturation. If the repetition time is reduced, the effect is worse, and the steady-state magnetization is even smaller - the result from imaging would be lower signal.
 
 <img src="images/GRE_flip90_TR500.gif" width="65%">
 
