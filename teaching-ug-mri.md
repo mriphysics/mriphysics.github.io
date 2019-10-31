@@ -42,13 +42,15 @@ Note that \\(\mathbf{M}\\) *does not* rotate back to equilibrium - the transvers
 #### Relaxation rates and correlation times
 Transverse and longitudinal relaxation are caused by the fluctuating local fields experienced by each spin moment. Taking a simplistic view, longitudinal relaxation is caused by the transverse component of the local fields, while transverse relaxation relates to the longitudinal component of the local fields. The latter effect is more straightforward to visualise. Imagine that a collection of spins experiences very slowly varying fluctuating background field as shown below:
 
-<img src="images/T2_slow_fluctuation.gif" width="40%">
+<img src="images/T2_slow_fluctuation.gif" width="30%">
+<img src="images/T2_slow_fluctuation_plot.gif" width="30%">
 
-The arrows correspond to the precessing phases of the spin moments - imagine we are looking down on them from above so we can see the transverse component. The grey colours correspond to the local strength of the magnetic field (longitudinal component). If this fluctuates it causes the precession frequency of the spins to locally speed up and slow down. The result (exaggerated here for bigger effect) is that the spins rapidly lose phase coherence, hence the overall signal (which is the aggregate from all of them) will be lower. Thus a long coherence time corresponds to a **short T2 time**.
+The arrows correspond to the precessing phases of the spin moments - imagine we are looking down on them from above so we can see the transverse component. The colours correspond to the local strength of the magnetic field (longitudinal component) - red means slightly more than the applied B0 and blue means slightly less. The fluctuations cause the precession frequency of the spins to locally speed up and slow down. The result (exaggerated here for bigger effect) is that the spins rapidly lose phase coherence, hence the overall signal (which is the aggregate from all of them) will be lower. The plot shows how the vector sum of the individual components goes down over time - *note that in an ideal world with a very large number of spins and corrcet distribution of frequencies this would be an exponential decay, whereas in our simple model it doesn't do this*. Thus a long coherence time corresponds to a **short T2 time**.
 
 Now imagine the opposite scenario where we have very rapidly fluctuating fields:
 
-<img src="images/T2_fast_fluctuation.gif" width="40%">
+<img src="images/T2_fast_fluctuation.gif" width="30%">
+<img src="images/T2_fast_fluctuation_plot.gif" width="30%">
 
 The fields have the same strength, but since the fluctuations are fast they don't accumulate a big difference on the spins phase over time. In this example the fast fluctuation (i.e. short correlation time) gives rise to a **long T2 time**. With reference to above, the T2' (reversible) decay corresponds to background fields that are not time varying. The T2 decay (irreversible) corresponds to all randomly temporally fluctuating fields.
 
