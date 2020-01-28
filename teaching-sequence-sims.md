@@ -78,3 +78,6 @@ This can be looked at in the k-space domain:
 
 
 Here again we see that the RF pulse mixes Mx, My, Mz but doesn't change the spatial modulation while the gradients do. In the Fourier domain we see that RF pulses mix up coefficients *of a given spatial order*, whereas gradients shift to higher order coefficients.
+
+
+Shaihan Malik (c) 2020. Please contact me if you wish to use these animations.
