@@ -7,4 +7,4 @@ htmlfile="$file.html"
 > $htmlfile
 printf "<!DOCTYPE html>\n<html>\n<title>$2</title>\n<xmp theme=""spacelab"" style=""display:none;"">""\n" >> $htmlfile
 cat $mdfile >> $htmlfile
-printf "</xmp>\n<script src=""http://strapdownjs.com/v/0.2/strapdown.js""></script>\n</html>" >> $htmlfile
+printf "</xmp>\n<script src=""https://cdn.jsdelivr.net/gh/Naereen/StrapDown.js@master/strapdown.min.js""></script>\n</html>" >> $htmlfile
