@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>MRI scanner</title>
+  <rect width="64" height="64" rx="10" fill="#e2231a"/>
+  <circle cx="32" cy="25" r="19" fill="#ffffff"/>
+  <circle cx="32" cy="25" r="12" fill="#0a2d50"/>
+  <ellipse cx="32" cy="25" rx="4.5" ry="5.5" fill="#e2231a"/>
+  <path d="M28 34h8l6 15H22z" fill="#ffffff"/>
+  <rect x="8" y="47" width="48" height="8" rx="4" fill="#ffffff"/>
+  <rect x="16" y="50" width="32" height="2" rx="1" fill="#0a2d50"/>
+</svg>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#e2231a" />
+    <meta name="description" content="Explore spoiled GRE, spin echo and FLAIR MRI contrast in a browser-based teaching simulation." />
+    <title>MRI Contrast Lab</title>
+    <link rel="icon" href="favicon.svg?v=1" type="image/svg+xml" sizes="any" />
+    <link rel="stylesheet" href="styles.css?v=contrast-6" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="MRI Contrast Lab home">
+        <span class="brand-rule" aria-hidden="true"></span>
+        <span class="brand-copy">
+          <span class="institution">King's College London, School of Biomedical Engineering and Imaging Sciences</span>
+          <span class="brand-title">MRI Contrast Lab</span>
+        </span>
+      </a>
+      <div class="top-actions">
+        <button class="text-button" id="howButton" type="button">How it works</button>
+        <button class="reset-button" id="resetButton" type="button">Reset experiment</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="workspace" aria-label="MRI contrast experiment">
+        <section class="results" aria-labelledby="resultTitle">
+          <div class="section-heading result-heading">
+            <span class="step">01</span>
+            <div><p class="kicker">Live simulation</p><h1 id="resultTitle">Synthetic MR image</h1></div>
+            <span class="status" id="status" role="status">Loading</span>
+          </div>
+
+          <figure class="image-panel">
+            <figcaption><span id="imageTitle">Spoiled gradient echo</span><small>normalised grayscale</small></figcaption>
+            <div class="image-toolbar" aria-label="Image contrast display controls">
+              <span class="contrast-label">Display range</span>
+              <div class="contrast-switch" role="group" aria-label="Select automatic or fixed image contrast">
+                <button class="contrast-button active" id="autoContrast" type="button" aria-pressed="true">Auto</button>
+                <button class="contrast-button" id="fixedContrast" type="button" aria-pressed="false">Fixed</button>
+              </div>
+              <div class="fixed-range" id="fixedRange" hidden>
+                <label>Lower<input id="contrastLower" type="number" step="0.001" inputmode="decimal" /></label>
+                <label>Upper<input id="contrastUpper" type="number" step="0.001" inputmode="decimal" /></label>
+              </div>
+            </div>
+            <div class="image-stage">
+              <canvas id="imageCanvas" width="256" height="256" aria-label="Simulated axial brain MR image in a square field of view"></canvas>
+              <div class="colorbar" aria-label="Signal intensity scale">
+                <span id="scaleMax">—</span><i aria-hidden="true"></i><span id="scaleMin">—</span>
+              </div>
+            </div>
+          </figure>
+
+          <div class="metrics" aria-label="Simulation metrics">
+            <div><span>Sequence</span><strong id="sequenceReadout">Spoiled GRE</strong></div>
+            <div><span>Parameters</span><strong id="parameterReadout">FA 17° · TR 10 ms · TE 1 ms</strong></div>
+            <div><span>Signal range</span><strong id="rangeReadout">—</strong></div>
+            <div><span>Acquisition time</span><strong id="acquisitionReadout">—</strong><small>TR × 256 lines × NEX</small></div>
+          </div>
+          <p class="interpretation" id="interpretation">Preparing the BrainWeb-derived tissue phantom…</p>
+        </section>
+
+        <aside class="controls" aria-labelledby="controlsTitle">
+          <div class="section-heading">
+            <span class="step">02</span>
+            <div><p class="kicker">Experiment setup</p><h2 id="controlsTitle">Sequence controls</h2></div>
+          </div>
+
+          <div class="mode-switch" role="group" aria-label="Select sequence type">
+            <button class="mode-button active" id="greMode" type="button" aria-pressed="true">Spoiled GRE</button>
+            <button class="mode-button" id="seMode" type="button" aria-pressed="false">Spin echo</button>
+            <button class="mode-button" id="flairMode" type="button" aria-pressed="false">FLAIR</button>
+          </div>
+
+          <p class="panel-intro" id="sequenceDescription">Spoiled gradient echo contrast depends on flip angle, TR, T1 and T2* decay during TE.</p>
+
+          <div class="control-panel" id="greControls">
+            <div class="control-group">
+              <div class="control-title"><label for="greFA">Flip angle</label><output id="greFAValue">17°</output></div>
+              <input id="greFA" type="range" min="0" max="100" step="1" value="17" />
+              <div class="range-labels"><span>0°</span><span>100°</span></div>
+            </div>
+            <div class="number-pair">
+              <label>TR <span>ms</span><input id="greTR" type="number" min="1" step="1" value="10" /></label>
+              <label>TE <span>ms</span><input id="greTE" type="number" min="0.1" step="0.1" value="1" /></label>
+            </div>
+          </div>
+
+          <div class="control-panel" id="seControls" hidden>
+            <div class="number-pair">
+              <label>TR <span>ms</span><input id="seTR" type="number" min="1" step="1" value="1000" /></label>
+              <label>TE <span>ms</span><input id="seTE" type="number" min="0.1" step="0.1" value="10" /></label>
+            </div>
+          </div>
+
+          <div class="control-panel" id="flairControls" hidden>
+            <div class="number-field"><label for="flairTI">Inversion time, TI <span>ms</span></label><input id="flairTI" type="number" min="0" step="1" value="458" /></div>
+            <div class="number-pair">
+              <label>TR <span>ms</span><input id="flairTR" type="number" min="1" step="1" value="1000" /></label>
+              <label>TE <span>ms</span><input id="flairTE" type="number" min="0.1" step="0.1" value="180" /></label>
+            </div>
+          </div>
+
+          <div class="control-group averaging-control">
+            <div class="control-title"><label for="nex">Signal averages (NEX)</label><output id="nexValue">1</output></div>
+            <input id="nex" type="range" min="1" max="8" step="1" value="1" />
+            <div class="range-labels"><span>1 average</span><span>8 averages</span></div>
+            <p>Noise falls as 1/√NEX; acquisition time rises in direct proportion.</p>
+          </div>
+
+          <div class="formula-card">
+            <span>Signal model</span>
+            <p id="formulaReadout" aria-label="Spoiled gradient echo signal equation">S = e<sup>−TE/T2*</sup> sin α · (1 − e<sup>−TR/T1</sup>) / (1 − cos α · e<sup>−TR/T1</sup>)</p>
+          </div>
+          <div class="tip"><span aria-hidden="true">✦</span><p id="tipText"><strong>Try this:</strong> vary the flip angle at short TR and find the angle that maximises signal.</p></div>
+        </aside>
+
+        <aside class="derived" aria-labelledby="tissueTitle">
+          <div class="derived-heading"><h2 id="tissueTitle">Main tissue values</h2><span>rough approximations</span></div>
+          <table>
+            <thead><tr><th>Tissue</th><th>T1</th><th>T2</th><th>T2*</th></tr></thead>
+            <tbody>
+              <tr><th>CSF</th><td>3000</td><td>1500</td><td>900</td></tr>
+              <tr><th>White matter</th><td>1000</td><td>80</td><td>48</td></tr>
+              <tr><th>Cortical gray</th><td>1500</td><td>120</td><td>72</td></tr>
+              <tr><th>Deep gray</th><td>1500</td><td>120</td><td>40</td></tr>
+            </tbody>
+          </table>
+          <small>Relaxation times in milliseconds</small>
+        </aside>
+      </section>
+
+      <section class="explain" id="explain" aria-labelledby="explainTitle">
+        <div class="section-heading">
+          <span class="step">03</span>
+          <div><p class="kicker">About the model</p><h2 id="explainTitle">What is being simulated?</h2></div>
+        </div>
+        <div class="concept-grid">
+          <article><span>Anatomy</span><h3>BrainWeb phantom</h3><p>The anatomy comes from the BrainWeb simulated brain database. It is fitted proportionally into a zero-padded 256 × 256 matrix with eleven tissue classes plus background.</p></article>
+          <article><span>Relaxation</span><h3>T1, T2 and T2*</h3><p>Each class is assigned simplified relaxation times for teaching. These rough values should not be used as quantitative tissue references.</p></article>
+          <article><span>Noise</span><h3>One fixed noise image</h3><p>The same Gaussian noise pattern and amplitude are added in every mode, making low-signal acquisitions appear visibly noisier.</p></article>
+        </div>
+        <details>
+          <summary>About the FLAIR model</summary>
+          <p>FLAIR is represented as a spin-echo signal preceded by inversion. Adjust TI to find where a tissue’s longitudinal magnetisation crosses zero; the displayed image uses magnitude, matching the original Live Script.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer><p>Educational contrast simulation · Runs locally in this browser · No MATLAB required</p></footer>
+    <script type="module" src="app.js?v=contrast-6"></script>
+  </body>
+</html>

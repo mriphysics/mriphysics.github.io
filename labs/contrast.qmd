@@ -1,0 +1,9 @@
+---
+title: "MRI contrast"
+description: "Explore how sequence settings change the relative signal from different tissues."
+toc: false
+---
+
+Compare tissue contrast across acquisitions. Change one sequence parameter at a time and use the images to explain the resulting signal differences.
+
+<a class="btn btn-primary" href="../lab-apps/contrast/index.html">Launch the MRI contrast lab</a>

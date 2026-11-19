@@ -1,0 +1,19 @@
+---
+pagetitle: 'Teaching materials \@mriphysics'
+toc: false
+---
+
+::: {.teaching-hero}
+[King’s College London · School of Biomedical Engineering & Imaging Sciences]{.institution-label}
+
+## Supplementary teaching materials from Imaging Physics and Engineering {.unnumbered}
+
+
+[Browse teaching topics](teaching.qmd){.btn .btn-primary} [Practical labs and web apps](labs/index.qmd){.btn .btn-outline-primary}
+:::
+
+::: {.teaching-attribution}
+Teaching materials by [Shaihan Malik](https://www.kcl.ac.uk/people/shaihan-malik), King's College London
+
+Please contact me if you would like to use any of the materials on these pages
+:::

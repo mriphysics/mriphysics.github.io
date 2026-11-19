@@ -1,0 +1,10 @@
+---
+title: "Practical labs"
+toc: false
+listing:
+  contents: "*.qmd"
+  type: grid
+  fields: [title, description]
+---
+
+Use the browser-based tools to explore how acquisition choices change an MR image.

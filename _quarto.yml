@@ -1,0 +1,101 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - teaching.qmd
+    - teaching-*.qmd
+    - labs/*.qmd
+  resources:
+    - "lab-apps/**"
+    - "images/Bloch_Bconst_lab.gif"
+    - "images/Bloch_Bminus_lab.gif"
+    - "images/Bloch_Bminus_rot.gif"
+    - "images/Bloch_Bplus_lab.gif"
+    - "images/Bloch_Bx_lab.gif"
+    - "images/Bloch_Bx_rot.gif"
+    - "images/Bloch_Bx_rot_cam.gif"
+    - "images/FID_lab.gif"
+    - "images/GRE_approach_equilibrium.gif"
+    - "images/GRE_flip59_TR500.gif"
+    - "images/GRE_flip90_TR1000.gif"
+    - "images/GRE_flip90_TR500.gif"
+    - "images/HW_horiz_combo.gif"
+    - "images/HW_horiz_image.gif"
+    - "images/HW_horiz_noground.gif"
+    - "images/HW_vertical_combo.gif"
+    - "images/HW_vertical_image.gif"
+    - "images/HW_vertical_noground.gif"
+    - "images/HzDipole_3D.gif"
+    - "images/HzDipole_3D_quiver_ax.gif"
+    - "images/HzDipole_3D_quiver_cor.gif"
+    - "images/HzDipole_3D_quiver_inclE.gif"
+    - "images/HzDipole_3D_quiver_inclE_zoom.gif"
+    - "images/HzDipole_line_x_inductive.gif"
+    - "images/HzDipole_line_x_radiative.gif"
+    - "images/M_bloch_t1.gif"
+    - "images/M_bloch_t2.gif"
+    - "images/M_bloch_t2graph.gif"
+    - "images/M_bloch_t2prime.gif"
+    - "images/M_spin_echo.gif"
+    - "images/SPGR_approach_equilibrium.gif"
+    - "images/SSFPanimation_-150.gif"
+    - "images/SSFPanimation_-90.gif"
+    - "images/SSFPanimation_0.gif"
+    - "images/SSFPanimation_45.gif"
+    - "images/T2_fast_fluctuation.gif"
+    - "images/T2_fast_fluctuation_plot.gif"
+    - "images/T2_slow_fluctuation.gif"
+    - "images/T2_slow_fluctuation_plot.gif"
+    - "images/adiabatic_afp__lab.gif"
+    - "images/adiabatic_afp__rot.gif"
+    - "images/adiabatic_ahp__lab.gif"
+    - "images/adiabatic_hypsech__lab.gif"
+    - "images/adiabatic_hypsech__rot.gif"
+    - "images/adiabatic_linear_sweep__lab.gif"
+    - "images/adiabatic_linear_sweep__rot.gif"
+    - "images/adiabatic_linear_sweep__rot_cam.gif"
+    - "images/approach_SS_gre.png"
+    - "images/approach_SS_spgr.png"
+    - "images/approach_ss_configs_v2.gif"
+    - "images/echotimes.gif"
+    - "images/fig_2017_11_10_11_28_40.png"
+    - "images/fig_2017_11_10_11_47_12.png"
+    - "images/inversiontimes.gif"
+    - "images/iso_sim_100_isochroms.gif"
+    - "images/iso_sim_3d_100_isochroms.gif"
+    - "images/iso_sim_3d_100_isochroms_STAGGERED.gif"
+    - "images/iso_sim_3d_single_isochrom.gif"
+    - "images/iso_sim_5_isochroms.gif"
+    - "images/mpsi_vs_mk_v2.gif"
+    - "images/output_sDdnMn.gif"
+    - "images/pulse_and_bloch1.gif"
+    - "images/pulse_and_bloch2.gif"
+    - "images/pulse_and_slice2.gif"
+    - "images/spinwarpVD_density.png"
+    - "images/spinwarp_VD_larmor.gif"
+    - "images/spinwarp_VD_larmor_Gx.gif"
+    - "images/spinwarp_VD_larmor_Gx_plot.gif"
+    - "images/spinwarp_VD_larmor_Gy.gif"
+    - "images/ssfp_plot.png"
+    - "images/sta_kspace_slice.gif"
+
+website:
+  title: 'Teaching materials \@mriphysics'
+  search: true
+  navbar:
+    background: "#e2231a"
+    foreground: "#ffffff"
+    left:
+      - text: Topics
+        href: teaching.qmd
+      - text: Practical labs
+        href: labs/index.qmd
+
+format:
+  html:
+    theme: flatly
+    css: teaching-site.css
+    html-math-method: mathjax
+    toc: true
+    lang: en-GB

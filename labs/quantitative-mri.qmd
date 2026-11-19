@@ -1,0 +1,11 @@
+---
+title: "Quantitative MRI"
+description: "Fit signal models to MRI measurements and assess the resulting parameter maps."
+toc: false
+---
+
+Explore how inversion time and echo time affect the signal, then use model fits and residuals to assess the quality of quantitative maps.
+
+This practical requires the access provided with the 6CCYB020 module.
+
+[Open the quantitative MRI lab](https://quantitative-mri-lab.shaihan-malik.chatgpt.site){.btn .btn-primary}

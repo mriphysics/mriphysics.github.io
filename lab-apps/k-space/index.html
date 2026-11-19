@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#03090f" />
+    <meta name="description" content="Explore how MRI k-space sampling changes image resolution, field of view, blur and aliasing." />
+    <title>MRI K-space Lab</title>
+    <link rel="stylesheet" href="styles.css?v=kings-1" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="MRI K-space Lab home">
+        <span class="brand-rule" aria-hidden="true"></span>
+        <span class="brand-copy">
+          <span class="institution">King's College London, School of Biomedical Engineering and Imaging Sciences</span>
+          <span class="brand-title">MRI K-space Lab</span>
+        </span>
+      </a>
+      <div class="top-actions">
+        <button class="text-button" id="howButton" type="button">How it works</button>
+        <button class="reset-button" id="resetButton" type="button">Reset experiment</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="workspace" aria-label="K-space experiment">
+        <aside class="controls" aria-labelledby="controlsTitle">
+          <div class="section-heading">
+            <span class="step">02</span>
+            <div><p class="kicker">Experiment setup</p><h2 id="controlsTitle">K-space controls</h2></div>
+          </div>
+
+          <div class="mode-switch" role="group" aria-label="Choose which domain drives the experiment">
+            <button class="mode-button active" id="kspaceMode" type="button" aria-pressed="true">K-space</button>
+            <button class="mode-button" id="imageMode" type="button" aria-pressed="false">Image prescription</button>
+          </div>
+
+          <div class="control-panel" id="kspaceControls">
+            <div class="control-group">
+              <div class="control-title"><label for="resolution">Resolution extent</label><output id="resolutionValue">100%</output></div>
+              <input id="resolution" type="range" min="0.05" max="1" step="0.05" value="1" />
+              <div class="range-labels"><span>Reduced extent</span><span>Full extent · 1 mm</span></div>
+              <p>Symmetric cropping increases effective voxel size. Asymmetric truncation retains one high-frequency edge, so nominal voxel size is preserved but the point-spread function changes.</p>
+            </div>
+
+            <div class="control-group">
+              <div class="control-title"><label for="fov">Encoded FOV / Δk</label><output id="fovValue">200 mm</output></div>
+              <input id="fov" type="range" min="50" max="400" step="1" value="200" />
+              <div class="range-labels"><span>50 mm · wider Δk</span><span>400 mm · finer Δk</span></div>
+              <p>FOV sets the spacing between samples: Δk = 2π/FOV. A smaller FOV aliases; a larger FOV requires more samples at the same resolution.</p>
+            </div>
+
+            <div class="toggle-row">
+              <div><label for="asymmetric">Asymmetric sampling</label><p>Remove frequencies from one side only.</p></div>
+              <input id="asymmetric" class="switch" type="checkbox" />
+            </div>
+            <div class="toggle-row">
+              <div><label for="both">Sample both dimensions</label><p>Apply changes in readout and phase directions.</p></div>
+              <input id="both" class="switch" type="checkbox" />
+            </div>
+
+            <div class="tip"><span aria-hidden="true">✦</span><p><strong>Try this:</strong> raise FOV from 200 to 400 mm. The anatomy barely changes, but the phase-line count and scan time double.</p></div>
+          </div>
+
+          <div class="control-panel" id="imageControls" hidden>
+            <p class="panel-intro">Prescribe the image-domain requirements. The lab calculates the Cartesian k-space grid needed to achieve them.</p>
+
+            <div class="control-group">
+              <div class="control-title"><label for="imageFovX">Readout FOV (x)</label><output id="imageFovXValue">200 mm</output></div>
+              <input id="imageFovX" type="range" min="50" max="400" step="1" value="200" />
+              <div class="range-labels"><span>50 mm</span><span>400 mm</span></div>
+            </div>
+
+            <div class="control-group">
+              <div class="control-title"><label for="imageFovY">Phase FOV (y)</label><output id="imageFovYValue">200 mm</output></div>
+              <input id="imageFovY" type="range" min="50" max="400" step="1" value="200" />
+              <div class="range-labels"><span>50 mm</span><span>400 mm</span></div>
+            </div>
+
+            <div class="control-group">
+              <div class="control-title"><label for="imageResolutionX">Readout resolution</label><output id="imageResolutionXValue">1.6 mm</output></div>
+              <input id="imageResolutionX" type="range" min="0.8" max="8" step="0.1" value="1.6" />
+              <div class="range-labels"><span>Finer</span><span>Coarser</span></div>
+            </div>
+
+            <div class="control-group">
+              <div class="control-title"><label for="imageResolutionY">Phase resolution</label><output id="imageResolutionYValue">1.6 mm</output></div>
+              <input id="imageResolutionY" type="range" min="0.8" max="8" step="0.1" value="1.6" />
+              <div class="range-labels"><span>Finer</span><span>Coarser</span></div>
+            </div>
+
+            <div class="compact-field phase-field">
+              <label for="phaseDirection">Phase-encoding direction</label>
+              <select id="phaseDirection"><option value="y">y (vertical)</option><option value="x">x (horizontal)</option></select>
+            </div>
+
+            <div class="tip"><span aria-hidden="true">✦</span><p>Matrix dimensions are rounded up to whole samples. The 400 mm high-resolution master grid supports continuous prescriptions without constraining FOV to integer undersampling factors.</p></div>
+          </div>
+        </aside>
+
+        <div class="results">
+          <div class="section-heading result-heading">
+            <span class="step">01</span>
+            <div><p class="kicker">Live reconstruction</p><h2>Raw data and reconstructed image</h2></div>
+            <span class="status" id="status" role="status">Ready</span>
+          </div>
+
+          <div class="canvas-grid">
+            <figure class="image-panel">
+              <figcaption><span>K-space magnitude</span><small>log display</small></figcaption>
+              <div class="plot-wrap">
+                <canvas id="kspaceCanvas" width="256" height="256" aria-label="Sampled k-space magnitude"></canvas>
+                <span class="axis-y">k<sub>y</sub> (rad/mm)</span>
+                <span class="axis-x">k<sub>x</sub> (rad/mm)</span>
+              </div>
+            </figure>
+            <figure class="image-panel">
+              <figcaption><span>Reconstructed image</span><small>magnitude</small></figcaption>
+              <div class="plot-wrap">
+                <canvas id="imageCanvas" width="256" height="256" aria-label="Reconstructed brain phantom"></canvas>
+                <span class="axis-y">y (mm)</span>
+                <span class="axis-x">x (mm)</span>
+              </div>
+            </figure>
+          </div>
+
+          <div class="metrics" aria-label="Sampling metrics">
+            <div><span>Encoded FOV</span><strong id="fovMetric">—</strong></div>
+            <div><span id="voxelLabel">Effective voxel</span><strong id="voxelMetric">—</strong></div>
+          </div>
+          <div class="scan-summary" aria-label="Projected scan time">
+            <div class="scan-summary-main"><span>Projected scan time</span><strong id="scanTimeReadout">—</strong></div>
+            <div class="scan-summary-details">
+              <span><b id="phaseLinesLabel">Phase lines (x)</b><strong id="phaseLinesReadout">—</strong></span>
+              <span><b>Fixed TR</b><strong>10 ms</strong></span>
+              <small>2D Cartesian · one phase line/TR · NEX = 1</small>
+            </div>
+          </div>
+          <p class="interpretation" id="interpretation">Loading the teaching phantom…</p>
+        </div>
+
+        <aside class="derived" aria-labelledby="derivedTitle">
+          <div class="derived-heading">
+            <p class="kicker">Linked parameters</p>
+            <h2 id="derivedTitle">Required acquisition</h2>
+            <span class="mode-readout" id="modeReadout">K-space driven</span>
+          </div>
+
+          <dl class="derived-grid">
+            <div><dt>Matrix</dt><dd id="matrixReadout">—</dd></div>
+            <div><dt>Achieved voxel</dt><dd id="voxelReadout">—</dd></div>
+            <div><dt>Δk<sub>x</sub> / Δk<sub>y</sub></dt><dd id="deltaKReadout">—</dd></div>
+            <div><dt>k<sub>max,x</sub> / k<sub>max,y</sub></dt><dd id="kmaxReadout">—</dd></div>
+          </dl>
+
+          <details class="equations">
+            <summary>Show relationships</summary>
+            <p>Δk = 2π/FOV<br />k<sub>max</sub> = π/Δx<br />N ≈ FOV/Δx<br />t<sub>scan</sub> = TR × N<sub>phase</sub></p>
+          </details>
+        </aside>
+      </section>
+
+      <section class="explain" id="explain" aria-labelledby="explainTitle">
+        <div class="section-heading">
+          <span class="step">03</span>
+          <div><p class="kicker">Read the result</p><h2 id="explainTitle">What should I notice?</h2></div>
+        </div>
+        <div class="concept-grid">
+          <article><span>Centre</span><h3>Contrast & broad structure</h3><p>The bright centre of k-space holds low spatial frequencies: the slowly varying shapes and most signal energy.</p></article>
+          <article><span>Edges</span><h3>Sharp detail</h3><p>Outer k-space contains rapid spatial changes. Cropping it keeps the anatomy recognisable but softens boundaries.</p></article>
+          <article><span>Spacing</span><h3>Field of view</h3><p>Increasing the gap between sampled lines shrinks encoded FOV. Anatomy outside it folds back into the image.</p></article>
+          <article><span>Targets</span><h3>Known feature sizes</h3><p>The bright discs within the phantom are 2, 3, 4, 6 and 8 mm across. Watch the smallest ones disappear as voxel size grows.</p></article>
+        </div>
+        <details>
+          <summary>About asymmetric sampling</summary>
+          <p>This demo zero-fills one side of k-space to reveal the phase-sensitive artefact. Clinical partial-Fourier methods use conjugate symmetry plus phase estimation, so they reconstruct more accurately than this teaching approximation.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer><p>Modified Shepp–Logan phantom on a 512 × 512, 400 mm master grid. FFT and reconstruction run locally in this tab.</p></footer>
+    <script type="module" src="app.js?v=physical-3"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+---
+title: "K-space and image encoding"
+description: "Change how k-space is sampled and see the effect on the reconstructed image."
+toc: false
+---
+
+Explore the relationship between k-space sampling, spatial resolution and field of view. Compare the full acquisition with reconstructions from different sampling patterns.
+
+- Remove the outer parts of k-space. What happens to fine spatial detail?
+- Increase the spacing between sampled phase-encoding lines. Where does wraparound appear?
+- Use image prescription mode to compare the requested and achievable voxel sizes.
+
+<a class="btn btn-primary" href="../lab-apps/k-space/index.html">Launch the K-space lab</a>

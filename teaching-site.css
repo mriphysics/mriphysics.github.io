@@ -1,0 +1,83 @@
+:root {
+  --kings-navy: #0a2d50;
+  --kings-red: #e2231a;
+  --kings-red-dark: #b51c15;
+  --kings-paper: #f4f6f7;
+  --kings-line: #cdd7dc;
+  --bs-body-color: var(--kings-navy);
+  --bs-body-bg: var(--kings-paper);
+  --bs-body-font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --bs-link-color: var(--kings-navy);
+  --bs-link-hover-color: var(--kings-red-dark);
+}
+
+#quarto-header .navbar {
+  border-bottom: 4px solid var(--kings-navy);
+}
+
+#quarto-header .navbar-brand {
+  border-inline-start: 4px solid #fff;
+  padding-inline-start: .7rem;
+  font-weight: 800;
+}
+
+.teaching-hero {
+  margin-block: 1.5rem 2.75rem;
+  padding: clamp(1.5rem, 6vw, 4rem);
+  border: 1px solid var(--kings-line);
+  border-top: 5px solid var(--kings-red);
+  background: #fff;
+}
+
+.institution-label {
+  color: var(--kings-navy);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.teaching-hero h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -.05em;
+}
+
+.teaching-hero p {
+  max-width: 54ch;
+}
+
+.teaching-hero .btn {
+  margin: .25rem .35rem .25rem 0;
+}
+
+main .btn-primary {
+  --bs-btn-bg: var(--kings-red-dark);
+  --bs-btn-border-color: var(--kings-red-dark);
+  --bs-btn-hover-bg: var(--kings-navy);
+  --bs-btn-hover-border-color: var(--kings-navy);
+  --bs-btn-active-bg: var(--kings-navy);
+  --bs-btn-active-border-color: var(--kings-navy);
+}
+
+main .btn-outline-primary {
+  --bs-btn-color: var(--kings-navy);
+  --bs-btn-border-color: var(--kings-navy);
+  --bs-btn-hover-bg: var(--kings-navy);
+  --bs-btn-hover-border-color: var(--kings-navy);
+}
+
+.quarto-grid-item.card {
+  background: #fff;
+  border-color: var(--kings-line);
+  border-radius: 0;
+}
+
+main img {
+  max-width: 100%;
+  height: auto;
+}
+
+.teaching-attribution {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--kings-line);
+}

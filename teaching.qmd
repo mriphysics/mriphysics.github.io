@@ -1,0 +1,11 @@
+---
+title: "Teaching topics"
+toc: false
+listing:
+  contents: "teaching-*.qmd"
+  sort: "lesson-order asc"
+  type: grid
+  fields: [title, description, categories]
+---
+
+Browse undergraduate and postgraduate lessons and supplementary animations.
